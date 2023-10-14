@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  
+
+  <title>CyberCup</title>
+</head>
+
+<body>
+  <h5>Cyber Cup</h5>
+  <img src="" alt="Cyber Cup Logo" />
+  <div class="title">
+    <h2>Welcome!</h2>
+  </div>
+
+  <div class="form">
+    <form id="form" action="#" method="GET">
+      <label for="bno">Bus Number</label>
+      <input type="number" pattern="\d*" title="Please enter only numeric values" id="bno" required /><br />
+      <label for="atime">Arrival Time</label>
+      <input type="text" id="atime" required /><br />
+
+      <label for="dtime">Departure Time</label>
+      <input type="text" id="dtime" required /><br />
+
+      <label for="dest">Destination</label>
+      <input type="text" id="dest" required /><br />
+      <input type="submit" value="Submit" id="submit" />
+      <div class="lang">
+        <label for="reg_lang">Enter a language:</label>
+        <input type="text" id="reg_lang" placeholder="hindi/marathi/bengali/gujrati/tamil" required />
+      </div>
+    </form>
+  </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+
+      const form = document.getElementById("form");
+      const submitButton = document.getElementById("submit");
+      const outputElement = document.getElementById("output");
+      form.addEventListener("click", async function (event)
+      {
+        event.preventDefault();
+        var busno = document.getElementById("bno").value;
+        var destination = document.getElementById("dest").value;
+        var desttime = document.getElementById("dtime").value;
+        var arrtime = document.getElementById("atime").value;
+
+        var res = `Bus number ${busno} Traveling on to ${destination}. The bus will depart at ${desttime} and arrive at ${arrtime}`;
+        
+        console.log(res);
+
+        var lang = document.getElementById("reg_lang").value;
+
+        
+      });
+    });
+  </script>
+  <div id="output">
+
+  </div>
+</body>
+
+</html>
